@@ -101,7 +101,7 @@ trait ProjectsEvents
 
             $lastProcessedEventId = (int) $status->last_processed_event_id ?? 0;
 
-            if ($lastStoredEventId !== $lastProcessedEventId) {
+            if ($lastProcessedEventId && $lastStoredEventId !== $lastProcessedEventId) {
                 return false;
             }
 
